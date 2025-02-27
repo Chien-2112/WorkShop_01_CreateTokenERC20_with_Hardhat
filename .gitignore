@@ -1,4 +1,12 @@
+# Node modules
 node_modules
+
+# Environment variables.
 .env
-artifacts
-cache
+
+# Hardhat build files.
+artifacts/
+cache/
+
+# Ignition development folder.
+ignition/deployment/

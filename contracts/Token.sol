@@ -12,12 +12,14 @@ contract Floppy is
     Ownable
 {
     uint256 private cap = 50_000_000_000 * 10**uint256(18);
+
     constructor() Ownable(msg.sender) {
         console.log("owner: %s maxcap: %s", msg.sender, cap);
         // Khi contract được deploy, mint toàn bộ supply cho owner.
         _mint(msg.sender, cap);
         transferOwnership(msg.sender);
     }
+    
     function mint(address to, uint256 amount) public onlyOwner {
         require(
             ERC20.totalSupply() + amount <= cap,
